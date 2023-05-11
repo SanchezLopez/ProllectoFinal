@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Listado de Médicos</title>
+  <link rel="stylesheet" type="text/css" href="/static/medicos.css">
+  {%include 'libraries/lib-css.html' %}
+</head>
+<body>
+  {% include 'tools/navlog.html' %}
+    <div class="col-ml-12">
+        
+
+        <div class="container">
+            <div class="justify-content-center">
+  <h1>Listado de médicos</h1>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flashes">
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido Paterno</th>
+        <th>Apellido Materno</th>
+        <th>Correo</th>
+        <th>Teléfono</th>
+        <th>Especialidad</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for medico in medicos %}
+        <tr>
+          <td>{{ medico[0] }}</td>
+          <td>{{ medico[1] }}</td>
+          <td>{{ medico[2] }}</td>
+          <td>{{ medico[3] }}</td>
+          <td>{{ medico[4] }}</td>
+          <td>{{ medico[6] }}</td>
+          <td>{{ medico[7] }}</td>
+          
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+    </div>
+    </div>
+   
+    {% include 'libraries/lib-js.html' %}
+</body>
+</html>

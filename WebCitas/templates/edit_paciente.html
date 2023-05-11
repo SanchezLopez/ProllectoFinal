@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Editar Paciente</title>
+    
+  
+  <link rel="stylesheet" type="text/css" href="/static/editar_pacientes.css">
+  {%include 'libraries/lib-css.html' %}
+  </head>
+  <body>
+    {% include 'tools/navlog.html' %}
+
+    <h1>Editar Paciente</h1>
+    <form method="POST">
+      <div class="form-group">
+        <label for="nombres">Nombres:</label>
+        <input type="text" class="form-control" id="nombres" name="nombres" value="{{ registro[1] }}" required>
+      </div>
+      <div class="form-group">
+        <label for="apellido_paterno">Apellido Paterno:</label>
+        <input type="text" class="form-control" id="apellido_paterno" name="apellido_paterno" value="{{ registro[2] }}" required>
+      </div>
+      <div class="form-group">
+        <label for="apellido_materno">Apellido Materno:</label>
+        <input type="text" class="form-control" id="apellido_materno" name="apellido_materno" value="{{ registro[3] }}" required>
+      </div>
+      <div class="form-group">
+        <label for="correo">Correo:</label>
+        <input type="email" class="form-control" id="correo" name="correo" value="{{ registro[4] }}" required>
+      </div>
+      <div class="form-group">
+        <label for="telefono">Teléfono:</label>
+        <input type="text" class="form-control" id="telefono" name="telefono" value="{{ registro[6]}}" required>
+      </div>
+      <div class="form-group">
+        <label for="edad">Edad:</label>
+        <input type="number" class="form-control" id="edad" name="edad" value="{{ registro[7] }}" required>
+      </div>
+
+      <div class="form-group">
+        <label for="peso">Peso:</label>
+        <input type="number" class="form-control" id="peso" name="peso" value="{{ registro[8] }}" required>
+      </div>
+      <div class="form-group">
+        <label for="estatura">Estatura:</label>
+        <input type="number" class="form-control" id="estatura" name="estatura" value="{{ registro[9] }}" required>
+      </div>
+
+    </div>
+    <div class="form-group">
+     <label for="codigo_postal">Codigo postal:</label>
+     <input type="number" class="codigo_postal" id="codigo_postal" name="codigo_postal" value="{{ registro[10] }}" required>
+    </div>
+
+      <div class="form-group">
+        <label for="tipo_sangre">Tipo de Sangre:</label>
+        <input type="text" class="form-control" id="tipo_sangre" name="tipo_sangre" value="{{ registro[11] }}" required>
+      </div>
+      
+      <input type="submit" value="Registrarse">
+    </div>
+    
+
+    
+        </select>
+       </div>
+    </form>
+  </body>
+</html> 

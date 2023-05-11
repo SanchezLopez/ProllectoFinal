@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de citas para pacientes</title>
+    <link rel="stylesheet" type="text/css" href="/static/citas.css">
+    {%include 'libraries/lib-css.html' %}
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h1>Solicitud de cita médica</h1>
+                <form action="{{ url_for('sacar_citas') }}" method="post">
+                    <div class="row justify-content-center">
+                        <div class="col-md-5">
+                            <label for="nombre">Nombre del paciente:</label>
+                            <input type="text" id="nombre" name="nombre" required><br><br>
+
+                            <label for="telefono">Número de teléfono:</label>
+                            <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" required><br><br>
+
+                            <label for="correo">Correo electrónico:</label>
+                            <input type="email" id="correo" name="correo" required><br><br>
+                        </div>
+                        <div class="col-md-5">
+                            <label for="sintomas">Síntomas:</label>
+                            <textarea id="sintomas" name="sintomas" rows="4" cols="50" required></textarea><br><br>
+
+                            <label for="fecha">Fecha de la cita:</label>
+                            <input type="date" id="fecha" name="fecha" required><br><br>
+
+                            <label for="hora">Hora de la cita:</label>
+                            <input type="time" id="hora" name="hora" required><br><br>
+
+                            <label for="medico">Médico:</label>
+                            <select id="medico" name="medico" required>
+                                <option value="">Seleccione un médico</option>
+                                {% for medico in medicos %}
+                                <option value="{{ medico[0] }}">{{ medico[2] }} - {{ medico[1] }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <input type="submit" value="Solicitar cita">
+                    <br><br>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% include 'libraries/lib-js.html' %}
+</body>
+</html>
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de registro</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='formulario.css') }}">
+    {%include 'libraries/lib-css.html' %}
+</head>
+<body>
+    {% include 'tools/navbar.html' %}
+    <div class="card">
+        <h2>Registro</h2>
+
+    <div class="card-body">
+        <form id="registro-form" action="{{ url_for('add') }}" method="post">
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <label for="nombres">Nombre:</label>
+                    <input type="text" id="nombres" name="nombres" placeholder="Ingrese su nombre completo.." required>
+            
+            
+                    <label for="apellido_paterno">Apellido Paterno:</label>
+                    <input type="text" id="apellido_paterno" name="apellido_paterno" placeholder="Ingrese su apellido paterno.." required>
+            
+                    <label for="apellido_materno">Apellido Materno:</label>
+                    <input type="text" id="apellido_materno" name="apellido_materno" placeholder="Ingrese su apellido materno.." required>
+            
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" name="correo" placeholder="Ingrese su correo electrónico.." required>
+            
+                    <label for="contraseña">Contraseña:</label>
+                    <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese su contraseña.." required>
+                    
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su número de teléfono.." required>
+
+                </div>
+                <div class="col-md-5">
+                
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" placeholder="Ingrese su edad.." required>
+        
+                <label for="tipo_sangre">Tipo de Sangre:</label>
+                <input type="text" id="tipo_sangre" name="tipo_sangre" placeholder="Ingrese su tipo de sangre.." required>
+        
+                <label for="peso">Peso (kg):</label>
+                <input type="number" id="peso" name="peso" step="0.01" placeholder="Ingrese su peso.." required>
+        
+                <label for="estatura">Estatura (m):</label>
+                <input type="number" id="estatura" name="estatura" step="0.01" placeholder="Ingrese su estatura.." required>
+        
+                <label for="codigo_postal">Código Postal:</label>
+                <input type="text" id="codigo_postal" name="codigo_postal" placeholder="Ingrese su código postal.." required>
+        
+                <input type="submit" value="Registrarse">
+                </div>
+                
+            </div>
+    </form>
+    
+    </div>
+    </div>
+    <script>
+        document.getElementById("registro-form").addEventListener("submit", function() {
+            window.location.href = "/login.html";
+        });
+    </script>
+{% include 'tools/footer.html'%}
+{% include 'libraries/lib-js.html' %}
+</body>
+</html>
+
+

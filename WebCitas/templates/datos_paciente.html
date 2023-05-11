@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Imprimir datos del paciente</title>
+  <meta charset="UTF-8">
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-family: Arial, sans-serif; 
+      font-size: 14px; 
+    }
+
+    th, td {
+      text-align: left;
+      padding: 8px;
+      font-weight: normal; 
+    }
+
+    th {
+      background-color: #a00000;
+      color: white;
+      font-weight: bold; 
+    }
+
+    tr:nth-child(even) {
+      background-color: #00eeff;
+    }
+
+    tr:hover {
+      background-color: #04fdd4;
+    }
+  </style>
+</head>
+<body>
+  <h1>Información del paciente</h1>
+  <table>
+    <tr>
+      <th>Nombre</th>
+      <td>{{ paciente[1] }}</td>
+    </tr>
+    <tr>
+      <th>Apellido Paterno</th>
+      <td>{{ paciente[2] }}</td>
+    </tr>
+    <tr>
+      <th>Apellido Materno</th>
+      <td>{{ paciente[3] }}</td>
+    </tr>
+    <tr>
+      <th>Correo</th>
+      <td>{{ paciente[4] }}</td>
+    </tr>
+    <tr>
+      <th>Teléfono</th>
+      <td>{{ paciente[6] }}</td>
+    </tr>
+    <tr>
+      <th>Edad</th>
+      <td>{{ paciente[7] }}</td>
+    </tr>
+    <tr>
+      <th>Peso</th>
+      <td>{{ paciente[9] }}</td>
+    </tr>
+    <tr>
+      <th>Estatura</th>
+      <td>{{ paciente[10] }}</td>
+    </tr>
+    <tr>
+      <th>Código Postal</th>
+      <td>{{ paciente[11] }}</td>
+    </tr>
+    <tr>
+      <th>Tipo de Sangre</th>
+      <td>{{ paciente[8] }}</td>
+    </tr>
+  </table>
+</body>
+</html>
+
+
+

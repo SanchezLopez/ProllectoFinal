@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de citas</title>
+    <link rel="stylesheet" type="text/css" href="/static/lista_citas.css">
+    {% include 'libraries/lib-css.html' %}
+</head>
+<body>
+    {% include 'tools/navlog.html' %}
+    <div class="col-ml-12">
+        <div class="container">
+            <div class="justify-content-center">
+                <h1>Lista de citas</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre del paciente</th>
+                            <th>Teléfono</th>
+                            <th>Correo electrónico</th>
+                            <th>Síntomas</th>
+                            <th>Fecha de la cita</th>
+                            <th>Hora de la cita</th>
+                            <th>Médico</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for cita in citas|sort(attribute='fecha', reverse=false)|sort(attribute='hora', reverse=false) %}
+                        <tr>
+                            <td>{{ cita[1] }}</td>
+                            <td>{{ cita[2] }}</td>
+                            <td>{{ cita[3] }}</td>
+                            <td>{{ cita[4] }}</td>
+                            <td>{{ cita[5] }}</td>
+                            <td>{{ cita[6] }}</td>
+                            <td>{{ cita[7] }} - {{ cita[8] }}</td>
+                            <td>
+                                <form action="{{ url_for('eliminar_cita', cita_id=cita[0]) }}" method="post">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit">Eliminar</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {% include 'libraries/lib-js.html' %}
+</body>
+</html>
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Listado de Registros</title>
+  <link rel="stylesheet" type="text/css" href="/static/tabla.css">
+{%include 'libraries/lib-css.html' %}
+</head>
+<body>
+  {% include 'tools/navlog.html' %}
+    <div class="col-ml-12">
+        
+
+        <div class="container">
+            <div class="justify-content-center">
+      <h1>Listado de pacientes</h1>
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flashes">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>nombre</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Edad</th>
+            <th>Tipo de Sangre</th>
+            <th>Peso</th>
+            <th>Estatura</th>
+            <th>Codigo Postal</th>
+            <th>Acciones</th>
+            <th>Generar PDF</th>
+          </tr>
+        
+        </thead>
+        <tbody>
+          {% for registro in registros %}
+      <tr>
+        <td>{{ registro[0]}}</td>
+        <td>{{ registro[1] }}</td>
+        <td>{{ registro[2] }}</td>
+        <td>{{ registro[3] }}</td>
+        <td>{{ registro[4] }}</td>
+        <td>{{ registro[6] }}</td>
+        <td>{{ registro[7] }}</td>
+        <td>{{ registro[8] }}</td>
+        <td>{{ registro[9] }}</td>
+        <td>{{ registro[10] }}</td>
+        <td>{{ registro[11] }}</td>
+        <td>
+        <a href="{{ url_for('edit_paciente', id=registro[0]) }}">Editar</a>
+                <form action="{{ url_for('delete_paciente', id=registro[0]) }}" method="post">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <button type="submit">Eliminar</button>
+                </form> </td>
+            </tr>
+        <td>
+                <form action="{{ url_for('generate_pdf', id=registro[0]) }}" method="post">
+                  <input type="hidden" name="_method" value="POST">
+                  <button type="submit">Generar PDF</button>
+                </form>
+              </td>
+
+          {% endfor %}
+        </tbody>
+      </table>
+      <a href="{{ url_for('registro') }}">Agregar Registro</a>
+</div>
+
+    </div>
+    </div>
+   
+    {% include 'libraries/lib-js.html' %}
+</body>
+</html>
+

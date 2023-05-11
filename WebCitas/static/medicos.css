@@ -1,0 +1,35 @@
+/* Estilos para la tabla */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  th,
+  td {
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  /* Estilos para los flashes */
+  .flashes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #ffc;
+    border: 1px solid #c00;
+    color: #c00;
+  }
+  
+  .flashes li {
+    padding: 0.5rem;
+  }
+  

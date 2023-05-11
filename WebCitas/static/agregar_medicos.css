@@ -1,0 +1,51 @@
+/* Estilos para el formulario */
+form {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    background-color: #F5DEB3;
+    border-radius: 5px;
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  input[type="submit"] {
+    background-color: #8B0000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #800000;
+  }
+  
+  /* Estilos para el encabezado */
+  h2 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2rem;
+    color: #8B0000;
+  }
+  
